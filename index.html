@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Custom Dropdown</title>
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+<body>
+ <ul class="dropdown" id="d">
+  <input type="text" value="Location" readonly="" id="v">
+  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+  <ul class="options" id="o">
+   <li cName="Country 1">Country 1</li>
+   <li cName="Country 2">Country 2</li>
+   <li cName="Country 3">Country 3</li>
+   <li cName="Country 4">Country 4</li>
+   <li cName="Country 5">Country 5</li>
+   <li cName="Country 6">Country 6</li>
+   <li cName="Country 7">Country 7</li>
+   <li cName="Country 8">Country 8</li>
+   <li cName="Country 9">Country 9</li>
+   <li cName="Country 10">Country 10</li>
+  </ul>
+ </ul>
+ <script type="text/javascript">
+  var dropdown = document.getElementById('d');
+  var options = document.getElementById('o');
+  var input = document.getElementById('v');
+
+  dropdown.addEventListener('click',function(){
+   this.classList.toggle('show');
+  });
+
+  options.addEventListener('click',function(event){
+   const listItem = event.target
+   const value = listItem.attributes.cName.value;
+   input.value = value;
+  })
+
+ </script>
+</body>
+</html>
